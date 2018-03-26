@@ -1,3 +1,4 @@
+
 cont_exist=`docker ps -aqf name=Inventory-app`
 if [ -z $cont_exist ]; then
     if [ "$1" = "-p" ]; then
@@ -17,4 +18,5 @@ if [ -z $cont_exist ]; then
 else
   echo "Running cme container"
   docker start -i Inventory-app
+  
 fi
