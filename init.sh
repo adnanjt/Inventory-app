@@ -9,12 +9,11 @@ if [ -z $cont_exist ]; then
       run_flags="-it"
     fi
 
-    echo "Creating container with" $run_flags
+    echo "Creating container with" 
     docker run \
-      --name Inventory-app $run_flags \
+      --name Inventory-app  \
       -p 8000:8000 -p 8080-8089:8080-8089 \
       -v ${PWD}:/app/src/github.com/adnanjt \
-      -v ${PWD}/nginx.conf:/etc/nginx/nginx.conf \
 else
   echo "Running cme container"
   docker start -i Inventory-app
